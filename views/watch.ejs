@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Movie Search Results</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <a href="/">Home</a>
+      <a href="/watch">Watch List</a> 
+
+      <h2>Movie Queue</h2>
+      <table class="table table-hover">   
+        <ul>
+          <% listOfMovies.forEach(function(movie) { %>
+            <tr>
+              <td>
+                <li><a href="/details/?i=<%= movie.imdbID %>"><%= movie.title %></a>
+
+                <form class="delete" method="post" action="/watch/<%= movie.imdbID %>?_method=delete"><button>Delete</button></form></li>
+              <% }) %>
+            </ul>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

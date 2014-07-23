@@ -2,13 +2,25 @@
 <html>
   <head>
     <title>Movie Search Results</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   </head>
   <body>
-    <h1>Results</h1>
-    <ul>
-      <% movieList.forEach(function(movie, index) { %>
-        <li><%= movie.Title %></li>
-      <% }) %>
-    </ul>
+    <div class="container">
+      <a href="/">Home</a>
+      <a href="/watch">Watch List</a> 
+
+      <h2>Results</h2>
+      <table class="table table-hover">
+        <!--Click movie titles to take to detailed view -->      
+          <% movieList.forEach(function(movie) { %>
+          <tr>
+          <td>
+            <li><a href="/details/?i=<%= movie.imdbID %>"><%= movie.Title %></a></li>
+          </td>
+          </tr>
+          <% }) %>
+    </table>
+  </div>
   </body>
 </html>

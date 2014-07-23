@@ -2,11 +2,22 @@
 <html>
   <head>
     <title>OMDB API Example</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   </head>
   <body>
-    <form action="/search">
-      <input type="text" name="searchTerm"></input>
-      <input type="submit"></input>
-    </form>
+  	<div class="heading">
+  		<div class="container">
+	  		<h1 class="title">Movies on Demand</h1>
+		  	
+		  	<a href="/watch" class="watch">Watch List</a>
+		  	<a href="/" class="home">Home</a>
+
+		    <form action="/results">
+		      <input type="text" name="searchTerm" placeholder="Search Movie Title"></input>
+		      <input type="submit"></input>
+		    </form>
+	    </div>
+    </div>
   </body>
 </html>

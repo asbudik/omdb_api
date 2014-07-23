@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <title>OMDB API Example</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body>
+  	<div class="heading">
+  		<div class="container">
+	  		<h1 class="title">Movies on Demand</h1>
+			  	<a href="/">Home</a>
+			  	<a href="/watch">Watch List</a> 
+			    </form>
+			    <% if (movieDetails.Poster != "N/A") { %>
+			      <img src=<%= movieDetails.Poster %>/>
+			    <% } %>
+			    <p><%= movieDetails.Title %></p>
+			<!--Include watch on detail view to add movie to watch list --> 
+			    <form method="post" action="/watch">
+			      <input type="hidden" name="Title" value="<%= movieDetails.Title %>"></input>
+			      <input type="hidden" name="imdbID" value="<%= movieDetails.imdbID %>"></input>
+			      <button>Watch Later</button>
+			    </form>
+			  </div>
+			</div>
+  </body>
+</html>
