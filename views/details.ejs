@@ -2,27 +2,35 @@
 <html>
   <head>
     <title>OMDB API Example</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css"/>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
   <body>
-  	<div class="heading">
-  		<div class="container">
-	  		<h1 class="title">Movies on Demand</h1>
-			  	<a href="/">Home</a>
-			  	<a href="/watch">Watch List</a> 
-			    </form>
-			    <% if (movieDetails.Poster != "N/A") { %>
-			      <img src=<%= movieDetails.Poster %>/>
-			    <% } %>
-			    <p><%= movieDetails.Title %></p>
-			<!--Include watch on detail view to add movie to watch list --> 
-			    <form method="post" action="/watch">
-			      <input type="hidden" name="Title" value="<%= movieDetails.Title %>"></input>
-			      <input type="hidden" name="imdbID" value="<%= movieDetails.imdbID %>"></input>
-			      <button>Watch Later</button>
-			    </form>
-			  </div>
-			</div>
+		<div class="container">
+  		<h1 class="title">Movies on Demand</h1>
+	  	
+	  	<a href="/watch" class="homewatch"><button class="btn btn-danger">Watch Now</button></a>
+	  	<a href="/" class="homeroot"><button class="btn btn-danger">Go Home</button></a>
+	  	<h2 class="head2">Movie Details</h2>
+      <% if (movieDetails.Poster != "N/A") { %>
+		      <img class="imgdeets" src=<%= movieDetails.Poster %>/>
+		    <% } %>
+		    <div class="moviedeets">
+			    <h3><%= movieDetails.Title %></h3>
+			    <h4><%= movieDetails.Released %></h4>
+			    <h4><%= movieDetails.Genre %></h4>
+			    <h6><%= movieDetails.Director %></h6>
+			    <h6><%= movieDetails.Actors %></h6>
+			    <p><%= movieDetails.Plot %></p>
+
+          <p>Mixtape Williamsburg irony jean shorts American Apparel Cosby sweater. Whatever keffiyeh irony tattooed, trust fund Marfa food truck artisan skateboard. Narwhal Thundercats chillwave, forage crucifix skateboard Vice pour-over you probably haven't heard of them disrupt Brooklyn mumblecore. Trust fund literally retro Intelligentsia wayfarers hoodie, pork belly pour-over Helvetica normcore lomo 90's. Forage synth tote bag VHS. Portland seitan Intelligentsia, deep v quinoa 90's PBR pour-over gluten-free organic Pinterest. Actually vinyl stumptown XOXO Intelligentsia.</p>
+
+		      <form class="watch-later" method="post" action="/watch">
+		        <input type="hidden" name="Title" value="<%= movieDetails.Title %>"></input>
+		        <input type="hidden" name="imdbID" value="<%= movieDetails.imdbID %>"></input>
+					<button class="btn btn-danger">Watch Later</button>
+		    </form>
+		  </div>
+    </div>
   </body>
 </html>

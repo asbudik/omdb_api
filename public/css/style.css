@@ -1,24 +1,46 @@
 .title {
-	font-size: 70px;
-	font-weight: bolder;
-	color: white;
-	text-shadow: 0 2px black, 2px 0 black;
-
+	font-size: 80px;
 }
-.container {
-	padding-top: 10px;
-}
-
-.heading {
-	background-color: #b20000;
-	padding-bottom: 15px;
-}
-
-.home, .watch, .delete {
-	float: right;
-}
-
 .delete {
 	position: relative;
 	right: 100px;
+	float: right;
+}
+
+.homeroot, .homewatch, .dumimg {
+	float: right;
+	margin-right: 8px;
+	margin-left: 8px;
+}
+.form-search {
+	margin-top: 15px;
+}
+
+.head2 {
+	color: #323232;
+}
+
+.anchor {
+	color: #cc0000;
+}
+
+.anchor:hover {
+	color: #ff1919;
+}
+
+.moviedeets, .imgdeets, .dumimg2 {
+	float: left;
+}
+.dumimg2 {
+	margin: 15px;
+}
+.moviedeets {
+	width: 600px;
+	margin-left: 20px;
+	position: relative;
+	top: -22px;
+}
+
+.watch-later {
+	margin-top: 20px;
 }

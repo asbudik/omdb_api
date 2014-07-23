@@ -7,16 +7,18 @@
   </head>
   <body>
     <div class="container">
-      <a href="/">Home</a>
-      <a href="/watch">Watch List</a> 
+    <h1 class="title">Movies on Demand</h1>
 
-      <h2>Movie Queue</h2>
+      <a href="/watch" class="homewatch"><button class="btn btn-danger">Watch Now</button></a>
+      <a href="/" class="homeroot"><button class="btn btn-danger">Go Home</button></a>
+
+      <h2 class="head2">Movie Queue</h2>
       <table class="table table-hover">   
         <ul>
           <% listOfMovies.forEach(function(movie) { %>
             <tr>
               <td>
-                <li><a href="/details/?i=<%= movie.imdbID %>"><%= movie.title %></a>
+                <li><a class="anchor" href="/details/?i=<%= movie.imdbID %>"><%= movie.title %></a>
 
                 <form class="delete" method="post" action="/watch/<%= movie.imdbID %>?_method=delete"><button>Delete</button></form></li>
               <% }) %>

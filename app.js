@@ -39,7 +39,7 @@ app.get('/details', function(req, res){
   request(url, function(error, response, body) {
     if (!error) {
       var data = JSON.parse(body);
-      res.render("details.ejs", {movieDetails: data || {}});
+      res.render("details", {movieDetails: data || {}});
     } else {
       res.send("error occured");
     }
